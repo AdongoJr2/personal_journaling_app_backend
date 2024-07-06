@@ -23,6 +23,10 @@ async function bootstrap() {
     )
     .setVersion('0.0.1')
     .addTag('Personal Journaling App REST APIs')
+    .addBearerAuth({
+      type: 'http',
+      description: 'Bearer token authorizarion',
+    })
     .build();
   const document = SwaggerModule.createDocument(app, config, {
     extraModels: [APIResponseBodyDTO, APIListResponseBodyDTO],
