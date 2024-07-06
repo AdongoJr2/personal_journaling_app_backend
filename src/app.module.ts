@@ -9,6 +9,8 @@ import { LoggerModule } from './core/modules/logger/logger.module';
 import { RefreshTokensModule } from './features/refresh-tokens/refresh-tokens.module';
 import { UsersModule } from './features/users/users.module';
 import { AuthModule } from './features/auth/auth.module';
+import { JournalCategoriesModule } from './features/journal-categories/journal-categories.module';
+import { JournalsModule } from './features/journals/journals.module';
 
 @Module({
   imports: [
@@ -43,6 +45,8 @@ import { AuthModule } from './features/auth/auth.module';
     RefreshTokensModule,
     AuthModule,
     UsersModule,
+    JournalCategoriesModule,
+    JournalsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
