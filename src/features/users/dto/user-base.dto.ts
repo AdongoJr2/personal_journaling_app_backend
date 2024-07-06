@@ -19,6 +19,14 @@ export abstract class UserBaseDto extends UserPhoneNumberDto {
   })
   lastName: string;
 
+  @IsDefined({
+    message: '$property is required',
+  })
+  @ApiProperty({
+    example: 'SampleUser',
+  })
+  username: string;
+
   @IsEmail(undefined, {
     message: (args: ValidationArguments) => {
       if (args.value !== undefined && args.value !== null) {

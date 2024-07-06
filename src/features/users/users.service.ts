@@ -105,6 +105,22 @@ export class UsersService {
     }
   }
 
+  async findOneByUsername(username: string) {
+    try {
+      const foundUser = await this.usersRepository.findOne({
+        where: { username },
+      });
+
+      if (!foundUser) {
+        throw new CustomNotFoundException(`User not found`);
+      }
+
+      return foundUser;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async update(detailsToUpdate: DeepPartial<User>) {
     try {
       const recordToUpdate = this.usersRepository.create(detailsToUpdate);

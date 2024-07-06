@@ -38,8 +38,8 @@ export class AuthService {
     loginUserDetails: LoginUserDto,
   ): Promise<TokenUserData | null> {
     try {
-      const foundUser = await this.usersService.findOneByPhoneNumber(
-        loginUserDetails.phoneNumber,
+      const foundUser = await this.usersService.findOneByUsername(
+        loginUserDetails.username,
       );
 
       const isPasswordCorrect = await bcrypt.compare(

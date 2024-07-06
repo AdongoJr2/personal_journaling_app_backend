@@ -30,6 +30,11 @@ export class User extends CommonEntityFields {
   })
   phoneNumber: string;
 
+  @Column({
+    unique: true,
+  })
+  username: string;
+
   @Column()
   @Exclude()
   password: string;

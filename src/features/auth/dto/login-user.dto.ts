@@ -1,14 +1,13 @@
 import { IsDefined } from 'class-validator';
-import { UserPhoneNumberDto } from 'src/features/users/dto/user-phone-number.dto';
 
-export class LoginUserDto extends UserPhoneNumberDto {
+export class LoginUserDto {
   /**
-   * @example +254700000000
+   * @example User1
    */
   @IsDefined({
     message: '$property is required',
   })
-  phoneNumber: string;
+  username: string;
 
   /**
    * @example 123456

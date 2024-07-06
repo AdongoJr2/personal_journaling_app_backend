@@ -8,12 +8,12 @@ import { TokenUserData } from 'src/core/types/token-user-data';
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy, 'local') {
   constructor(private authService: AuthService) {
-    super({ usernameField: 'phoneNumber' });
+    super({ usernameField: 'username' });
   }
 
   async validate(username: string, password: string): Promise<TokenUserData> {
     const user = await this.authService.validateUser({
-      phoneNumber: username,
+      username,
       password,
     });
 
