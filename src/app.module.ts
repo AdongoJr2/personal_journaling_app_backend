@@ -3,6 +3,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ApiResponseModule } from './core/modules/api-response/api-response.module';
+import { SharedModule } from './shared/shared.module';
+import { LoggerModule } from './core/modules/logger/logger.module';
 
 @Module({
   imports: [
@@ -31,6 +34,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         logging: ['query', 'info', 'error', 'log'],
       }),
     }),
+    ApiResponseModule,
+    SharedModule,
+    LoggerModule,
   ],
   controllers: [AppController],
   providers: [AppService],
