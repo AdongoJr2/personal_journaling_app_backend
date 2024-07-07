@@ -18,9 +18,7 @@ export class LocalStrategy extends PassportStrategy(Strategy, 'local') {
     });
 
     if (!user) {
-      throw new CustomUnauthorizedException(
-        'Incorrect Phone Number or Password',
-      );
+      throw new CustomUnauthorizedException('Incorrect Username or Password');
     }
 
     return user;
